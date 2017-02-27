@@ -35,11 +35,17 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
     private int bodyIndex;
     private int legIndex;
 
+    // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI
+        // A single-pane display refers to phone screens, and two-pane to larger tablet screens
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image
+        // Also, for the two-pane display, get rid of the "Next" button in the master list fragment
 
     }
 
@@ -47,6 +53,11 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
     public void onImageSelected(int position) {
         // Create a Toast that displays the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+
+        // TODO (5) Handle the two-pane case and replace existing fragments right when a new image is selected from the master list
+        // The two-pane case will not need a Bundle or Intent since a new activity will not be started;
+        // This is all happening in this MainActivity and one fragment will be replaced at a time
+
 
         // Based on where a user has clicked, store the selected list index for the head, body, and leg BodyPartFragments
 
