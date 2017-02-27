@@ -11,6 +11,7 @@
  limitations under the License.-->
 
 <!-- GridView that displays AndroidMe images -->
+<!-- TODO (1) Turn this into a LinearLayout and add a "Next" button at the bottom of the gridview -->
 <GridView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/images_grid_view"
