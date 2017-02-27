@@ -30,6 +30,8 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
+    // TODO (3) Create final Strings to store state information about the list of images and list index
+
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
 
@@ -60,6 +62,10 @@ public class BodyPartFragment extends Fragment {
         if(mImageIds != null){
             // Set the image resource to the list item at the stored index
             imageView.setImageResource(mImageIds.get(mListIndex));
+
+            // TODO (1) Set a click listener on the image view and on a click increment the list index and set the image resource
+            // TODO (2) If you reach the end of a list of images, set the list index back to 0 (the first item in the list)
+
         } else {
             Log.v(TAG, "This fragment has a null list of image id's");
         }
@@ -79,4 +85,5 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
+    // TODO (4) Override onSaveInstanceState and save the current state of this fragment
 }
