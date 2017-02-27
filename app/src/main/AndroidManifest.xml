@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- TODO (5) Declare the MainActivity in the manifest and set it to launch upon opening this app -->
+
         <activity android:name=".ui.AndroidMeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
