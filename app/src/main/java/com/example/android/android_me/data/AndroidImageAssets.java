@@ -77,7 +77,7 @@ public class AndroidImageAssets {
         addAll(bodies);
         addAll(legs);
     }};
-    
+
 
     // Getter methods that return lists of all head images, body images, and leg images
 
