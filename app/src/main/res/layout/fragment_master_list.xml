@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Copyright (C) 2017 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!--Copyright (C) 2017 The Android Open Source Project
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,11 +10,10 @@
  limitations under the License.-->
 
 <!-- GridView that displays AndroidMe images -->
-<GridView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/images_grid_view"
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_grid_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:adjustViewBounds="true"
     android:columnWidth="180dp"
     android:gravity="center"
@@ -23,5 +21,4 @@
     android:numColumns="3"
     android:padding="16dp"
     android:stretchMode="columnWidth"
-    android:verticalSpacing="8dp">
-</GridView>
+    android:verticalSpacing="8dp" />

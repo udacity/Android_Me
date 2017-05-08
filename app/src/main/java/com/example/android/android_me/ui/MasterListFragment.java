@@ -26,7 +26,6 @@ import android.widget.GridView;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
-
 // This fragment displays all of the AndroidMe images in one large list
 // The list appears as a grid of images
 public class MasterListFragment extends Fragment {
@@ -43,7 +42,7 @@ public class MasterListFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_master_list, container, false);
 
         // Get a reference to the GridView in the fragment_master_list xml layout file
-        GridView gridView = (GridView) rootView.findViewById(R.id.images_grid_view);
+        GridView gridView = (GridView) rootView.findViewById(R.id.image_grid_view);
 
         // Create the adapter
         // This adapter takes in the context and an ArrayList of ALL the image resources to display
@@ -55,5 +54,4 @@ public class MasterListFragment extends Fragment {
         // Return the root view
         return rootView;
     }
-
 }
