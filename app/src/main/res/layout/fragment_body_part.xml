@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Copyright (C) 2017 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!--Copyright (C) 2017 The Android Open Source Project
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -11,10 +10,7 @@
  limitations under the License.-->
 
 <!-- This fragment layout displays just one image of an Android-Me body part -->
-<ImageView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/body_part_image_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</ImageView>
+    android:layout_height="match_parent" />

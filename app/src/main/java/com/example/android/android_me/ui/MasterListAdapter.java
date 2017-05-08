@@ -20,8 +20,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.example.android.android_me.R;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class MasterListAdapter extends BaseAdapter {
 
     /**
      * Constructor method
+     *
      * @param imageIds The list of images to display
      */
     public MasterListAdapter(Context context, List<Integer> imageIds) {
@@ -60,25 +62,26 @@ public class MasterListAdapter extends BaseAdapter {
         return 0;
     }
 
-    /**
-     * Creates a new ImageView for each item referenced by the adapter
-     */
     public View getView(final int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
         if (convertView == null) {
-            // If the view is not recycled, this creates a new ImageView to hold an image
-            imageView = new ImageView(mContext);
-            // Define the layout parameters
-            imageView.setAdjustViewBounds(true);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
+            convertView = View.inflate(mContext, R.layout.image_item, null);
+
+            final ImageView imageView = (ImageView) convertView.findViewById(R.id.image_item);
+            final ViewHolder viewHolder = new ViewHolder(imageView);
+            convertView.setTag(viewHolder);
         }
 
         // Set the image resource and return the newly created ImageView
-        imageView.setImageResource(mImageIds.get(position));
-        return imageView;
+        final ViewHolder viewHolder = (ViewHolder) convertView.getTag();
+        viewHolder.imageViewItem.setImageResource(mImageIds.get(position));
+        return convertView;
     }
 
+    private class ViewHolder {
+        private final ImageView imageViewItem;
+
+        ViewHolder(ImageView imageViewItem) {
+            this.imageViewItem = imageViewItem;
+        }
+    }
 }
