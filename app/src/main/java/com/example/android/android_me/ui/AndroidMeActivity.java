@@ -40,5 +40,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_android_me);
 
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
+          BodyPartFragment bodyPartFragment=new BodyPartFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.head_container, bodyPartFragment).commit();
     }
 }

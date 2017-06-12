@@ -31,7 +31,11 @@
 
         <!-- TODO (4) Create a container to hold the head BodyPartFragment of the custom Android -->
         <!--The container should be 180dp in height -->
-
+<FrameLayout
+    android:id="@+id/head_container"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:scaleType="centerInside"></FrameLayout>
 
 
     </LinearLayout>
