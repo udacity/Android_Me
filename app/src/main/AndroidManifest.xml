@@ -9,15 +9,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- TODO (5) Declare the MainActivity in the manifest and set it to launch upon opening this app -->
-
-        <activity android:name=".ui.AndroidMeActivity">
+        <!-- Declare the MainActivity in the manifest and set it to launch upon opening this app -->
+        <activity android:name=".ui.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.AndroidMeActivity" />
+
     </application>
 
 </manifest>
