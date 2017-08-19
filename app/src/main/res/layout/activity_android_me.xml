@@ -29,9 +29,24 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <!-- TODO (4) Create a container to hold the head BodyPartFragment of the custom Android -->
-        <!--The container should be 180dp in height -->
 
+        <!-- Three containers for each Android-Me body part -->
+        <!-- This container holds the head BodyPartFragment of the custom Android-Me image -->
+        <FrameLayout android:id="@+id/head_container"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerInside"/>
+
+        <!-- The remaining containers for the body and leg BodyPartFragments -->
+        <FrameLayout android:id="@+id/body_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside"/>
+
+        <FrameLayout android:id="@+id/leg_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside"/>
 
 
     </LinearLayout>
