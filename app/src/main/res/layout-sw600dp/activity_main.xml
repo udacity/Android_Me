@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COMPLETED (1) Create a new two-pane activity_main layout for tablets (sw600dp)
+This means creating a new layout folder for tablet screens and another activity_main.xml -->
+
+<!-- COMPLETED (2) Build the layout to display the MasterListFragment and all BodyPartFragments -->
+<!-- Specifically, this layout should be a horizontal LinearLayout with the MasterListFragment on the left of the
+ screen and three vertically arranged FrameLayout containers for the dynamic BodyPartFragments on the right side -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- static master list fragment -->
+    <fragment
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:id="@+id/master_list_fragment"
+        android:name="com.example.android.android_me.ui.MasterListFragment"/>
+
+    <!-- center divider -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_green_dark"/>
+
+    <!-- android body part fragments -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/android_me_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- Three containers for each Android-Me body part -->
+            <!-- This container holds the head BodyPartFragment of the custom Android-Me image -->
+            <FrameLayout
+                android:id="@+id/head_container"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerInside" />
+
+            <!-- The remaining containers for the body and leg BodyPartFragments -->
+            <FrameLayout
+                android:id="@+id/body_container"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerInside" />
+
+            <FrameLayout
+                android:id="@+id/leg_container"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerInside" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
