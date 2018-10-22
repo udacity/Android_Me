@@ -41,6 +41,28 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+              Button nextButton = (Button) findViewById(R.id.next_button);
+
+        // The "Next" button launches a new AndroidMeActivity
+        // added in oncreate itself so that even when no image is selected and next but is clicked the action performed with default value
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
+        Bundle b = new Bundle();
+        b.putInt("headIndex", headIndex);
+        b.putInt("bodyIndex", bodyIndex);
+        b.putInt("legIndex", legIndex);
+
+        // Attach the Bundle to an intent
+        final Intent intent = new Intent(this, AndroidMeActivity.class);
+        intent.putExtras(b);
+
+         startActivity(intent);
+
+            }
+        });
+
     }
 
     // Define the behavior for onImageSelected
@@ -68,26 +90,6 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 break;
             default: break;
         }
-
-        // Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity
-        Bundle b = new Bundle();
-        b.putInt("headIndex", headIndex);
-        b.putInt("bodyIndex", bodyIndex);
-        b.putInt("legIndex", legIndex);
-
-        // Attach the Bundle to an intent
-        final Intent intent = new Intent(this, AndroidMeActivity.class);
-        intent.putExtras(b);
-
-        // The "Next" button launches a new AndroidMeActivity
-        Button nextButton = (Button) findViewById(R.id.next_button);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent);
-            }
-        });
-
     }
 
 }
