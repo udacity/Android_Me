@@ -21,6 +21,7 @@ import android.os.PersistableBundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
@@ -41,7 +42,12 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        Log.d(TAG, "OnCreate... ");
+        Log.d(TAG, "OnCreate... "+getIntent());
+
+        /*Toast.makeText(this, "OnCreate.. head"+getIntent().getIntExtra("head", 0)
+                +"body: "+getIntent().getIntExtra("body", 0)
+                +"leg: "+getIntent().getIntExtra("leg", 0)
+                +"\n"+getIntent(), Toast.LENGTH_SHORT).show();*/
 
         if(savedInstanceState == null) {
             BodyPartFragment headFragment = new BodyPartFragment();
@@ -49,6 +55,7 @@ public class AndroidMeActivity extends AppCompatActivity {
             BodyPartFragment legsFragment = new BodyPartFragment();
 
             headFragment.setImageList(AndroidImageAssets.getHeads());
+            headFragment.setImageIndex(getIntent().getIntExtra("head", 0));
             FragmentManager fragmentManager = getSupportFragmentManager();
 
             Log.d(TAG, "fragment? " + headFragment.isAdded());
@@ -58,11 +65,13 @@ public class AndroidMeActivity extends AppCompatActivity {
                     .commit();
 
             bodyFragment.setImageList(AndroidImageAssets.getBodies());
+            bodyFragment.setImageIndex(getIntent().getIntExtra("body", 0));
             fragmentManager.beginTransaction()
                     .add(R.id.fragment_container_body, bodyFragment)
                     .commit();
 
             legsFragment.setImageList(AndroidImageAssets.getLegs());
+            legsFragment.setImageIndex(getIntent().getIntExtra("leg", 0));
             fragmentManager.beginTransaction()
                     .add(R.id.fragment_container_legs, legsFragment)
                     .commit();

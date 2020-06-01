@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.android.android_me.R;
@@ -28,12 +29,25 @@ public class MasterListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private int mImgPtr;
-
     MasterListAdapter masterListAdapter;
+    IOnGridImageClickListener mCallback;
+
+    interface IOnGridImageClickListener{
+        void onImageSelected(int position);
+    }
 
     public MasterListFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof IOnGridImageClickListener){
+            mCallback = (IOnGridImageClickListener)context;
+        }else{
+            throw new IllegalStateException("Activity has not implemented IOnGridImageClickListener intf.");
+        }
     }
 
     public void createMasterListFragment(Context ctx, List<Integer> imgResIds){
@@ -75,6 +89,14 @@ public class MasterListFragment extends Fragment {
         if(savedInstanceState == null) {
             GridView gridView = (GridView) rootView.findViewById(R.id.fragmen_grid_view);
             gridView.setAdapter(masterListAdapter);
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if(null != mCallback){
+                        mCallback.onImageSelected(position);
+                    }
+                }
+            });
         }
         return rootView;
     }
