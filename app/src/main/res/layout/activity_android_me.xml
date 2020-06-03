@@ -32,8 +32,22 @@
         <!-- TODO (4) Create a container to hold the head BodyPartFragment of the custom Android -->
         <!--The container should be 180dp in height -->
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/fragment_container_head" />
 
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/fragment_container_body" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/fragment_container_legs" />
     </LinearLayout>
 
 </ScrollView>
