@@ -96,3 +96,8 @@ The **Diff** link will take you to a Github diff as seen below:
 All of the code that was added in the solution is in green, and the removed code (which will usually be the TODO comments) is in red. 
 ## Report Issues
 Notice any issues with a repository? Please file a github issue in the repository.
+
+ # Archival Note 
+ This repository is deprecated; therefore, we are going to archive it. However, learners will be able to fork it to their personal Github account but cannot submit PRs to this repository. If you have any issues or suggestions to make, feel free to: 
+- Utilize the https://knowledge.udacity.com/ forum to seek help on content-specific issues. 
+- Submit a support ticket along with the link to your forked repository if (learners are) blocked for other reasons. Here are the links for the [retail consumers](https://udacity.zendesk.com/hc/en-us/requests/new) and [enterprise learners](https://udacityenterprise.zendesk.com/hc/en-us/requests/new?ticket_form_id=360000279131).
